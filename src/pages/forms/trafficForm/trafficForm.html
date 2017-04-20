@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      Reclamador de multas
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-label floating> Numero de expediente </ion-label>
+      <ion-input type="text" [(ngModel)]="dataToSend.expedientNumber" name="expedientNumber"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating> Fecha de la infracción  </ion-label>
+      <ion-input type="text" [(ngModel)]="dataToSend.fineDate" name="fineDate"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating> Lugar de la infracción </ion-label>
+      <ion-input type="text" [(ngModel)]="dataToSend.place" name="place"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating> Ciudad </ion-label>
+      <ion-input type="text" [(ngModel)]="dataToSend.city" name="city"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating> Matrícula del vehículo </ion-label>
+      <ion-input type="text" [(ngModel)]="dataToSend.vehiclePlate" name="vehiclePlate"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating> Importe de la infracción </ion-label>
+      <ion-input type="text" [(ngModel)]="dataToSend.amount" name="amount"></ion-input>
+    </ion-item>
+  </ion-list>
+  <button ion-button color="primary" (click)="sendData()" block> Enviar formulario </button>
+</ion-content>
+

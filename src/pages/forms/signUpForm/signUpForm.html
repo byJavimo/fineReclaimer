@@ -1,0 +1,44 @@
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-label floating> Nombre </ion-label>
+      <ion-input type="text" [(ngModel)]="signUpData.name" name="name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating> Primer apellido  </ion-label>
+      <ion-input type="text" [(ngModel)]="signUpData.lastname1" name="lastname1"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating> Segundo apellido </ion-label>
+      <ion-input type="text" [(ngModel)]="signUpData.lastname2" name="lastname2"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating> Email </ion-label>
+      <ion-input type="email" [(ngModel)]="signUpData.email" name="email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating> Contraseña </ion-label>
+      <ion-input type="password" [(ngModel)]="signUpData.password" name="password"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating> Ciudad </ion-label>
+      <ion-input type="text" [(ngModel)]="signUpData.city" name="city"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating> Código postal </ion-label>
+      <ion-input type="number" [(ngModel)]="signUpData.postalCode" name="postalCode"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating> Dirección </ion-label>
+      <ion-input type="text" [(ngModel)]="signUpData.adress" name="adress"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked> Fecha de nacimiento </ion-label>
+      <ion-input type="date" [(ngModel)]="signUpData.birthDate" placeholder="Fecha de nacimiento" name="birthDate"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating> Documento de Identidad (DNI, NIE...) </ion-label>
+      <ion-input type="text" [(ngModel)]="signUpData.idCard" name="idCard"></ion-input>
+    </ion-item>
+  </ion-list>
+</ion-content>

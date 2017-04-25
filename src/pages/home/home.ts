@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { App,  NavController } from 'ionic-angular';
 import {FormListPage} from '../forms/formList';
-import {SignUpFormPage} from '../forms/signUpForm/signUpForm';
+import { AuthService } from '../../providers/auth-service';
+import {LoginPage} from '../loginPage/loginPage';
 
 
 @Component({
@@ -9,17 +10,21 @@ import {SignUpFormPage} from '../forms/signUpForm/signUpForm';
   templateUrl: 'home.html'
 })
 export class HomePage {
-
-  constructor(public navCtrl: NavController) {
-
+  username = '';
+  email = '';
+  constructor(private navCtrl: NavController, private auth: AuthService, private app: App) {
+    let info = this.auth.getUserInfo();
+    this.username = info.name;
+    this.email = info.email;
   }
 
-  isUserLogged() {
-    return true;
+  logout() {
+    this.auth.logout().subscribe(succ => {
+      this.app.getRootNav().setRoot(LoginPage);
+    });
   }
 
   goToFormList() {
     this.navCtrl.push(FormListPage)
   }
-
 }

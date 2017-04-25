@@ -2,12 +2,12 @@
   <div class="login-box center">
     <ion-list>
       <ion-item>
-        <ion-label floating> Email </ion-label>
-        <ion-input type="email" [(ngModel)]="loginData.email" name="email"></ion-input>
+        <ion-label floating required> Email </ion-label>
+        <ion-input type="email" [(ngModel)]="registerCredentials.email" name="email"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label floating> Contraseña </ion-label>
-        <ion-input type="password" [(ngModel)]="loginData.password" name="password"></ion-input>
+        <ion-label floating required> Contraseña </ion-label>
+        <ion-input type="password" [(ngModel)]="registerCredentials.password" name="password"></ion-input>
       </ion-item>
     </ion-list>
     <button ion-button color="primary" (click)="logIntoApp()" block> Iniciar Sesión </button>

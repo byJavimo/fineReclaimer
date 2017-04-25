@@ -3,10 +3,16 @@
     <ion-title>
       Reclamador de multas
     </ion-title>
+    <div (click)="logout()">
+      Logout
+    </div>
   </ion-navbar>
 </ion-header>
 
-<ion-content *ngIf="isUserLogged()">
+<ion-content>
+  <div>
+    <h2> Welcome </h2>
+  </div>
   <button ion-button color="primary" (click)="goToFormList()">Ir a Formularios</button>
 </ion-content>
 

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, AlertController } from 'ionic-angular';
 import { AuthService } from '../../../providers/auth-service';
+import {HomePage} from '../../home/home';
 
 @Component({
   selector: 'page-signUp',
@@ -11,7 +12,7 @@ export class SignUpFormPage {
   createSuccess = false;
   registerCredentials = {name: '', lastName1: '', lastName2: '', email: '', password: '', idCard: ''};
 
-  constructor(private nav: NavController, private auth: AuthService, private alertCtrl: AlertController) {
+  constructor(private navCtrl: NavController, private auth: AuthService, private alertCtrl: AlertController) {
 
   }
 
@@ -19,9 +20,10 @@ export class SignUpFormPage {
     this.auth.register(this.registerCredentials).subscribe(success => {
           if (success) {
             this.createSuccess = true;
-            this.showPopup("Success", "Account created.");
+            this.showPopup("Success", "Bienvenido. Te has registrado correctamente");
+            this.goToHome()
           } else {
-            this.showPopup("Error", "Problem creating account.");
+            this.showPopup("Error", "Algo ha ido mal creando la cuenta. Por favor, vuelve a intentarlo más tarde");
           }
         },
         error => {
@@ -38,12 +40,16 @@ export class SignUpFormPage {
           text: 'OK',
           handler: data => {
             if (this.createSuccess) {
-              this.nav.popToRoot();
+              this.navCtrl.popToRoot();
             }
           }
         }
       ]
     });
     alert.present();
+  }
+
+  goToHome() {
+    this.navCtrl.push(HomePage);
   }
 }

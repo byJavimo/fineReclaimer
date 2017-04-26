@@ -24313,6 +24313,22 @@ ion-navbar.toolbar {
   }
 }
 
+page-home .logout-button {
+  float: right;
+}
+
+page-home .home-dashboard {
+  background-image: url("../../assets/images/cityScape_with_cars.jpg");
+}
+
+page-home .main-card {
+  margin-top: 10%;
+}
+
+page-home .main-card__button {
+  margin: 0 22% 5%;
+}
+
 page-login ion-content {
   background-image: url("http://mamadigital.mx/blog/wp-content/uploads/2015/11/trafico-detenido.jpg");
 }
@@ -24323,8 +24339,12 @@ page-login .login-box {
   padding: 10px;
 }
 
+page-login .login-field {
+  border-radius: 30px;
+  margin-bottom: 10px;
+}
+
 page-login .not-registered-text {
   color: #fff;
-  padding-top: 10px;
   text-align: center;
 }
